@@ -1,3 +1,3 @@
 # Portfolio
 A respository of portfolio work.
-Check different branches for specific platforms.
+Check specific folders for different platforms.
