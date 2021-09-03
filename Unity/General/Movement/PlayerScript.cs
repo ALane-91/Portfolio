@@ -4,14 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour
 {
+    //This file contains code for movement in a few types of games, using mouse drag and WASD movement. 
     //Declares the RigidBody variable.
     Rigidbody2D rigBod;
     //Declares the value of the speed variable.
     public float speed = 5.0f;
     //Bool to check if player jump status is true or false.
     private bool _jump;
-    //Bool to check if the bird was launched using mouse up event.
-    private bool _birdWasLaunched;
+    //Bool to check if the player character was launched using mouse up event.
+    private bool _playerWasLaunched;
     //Bool to check how long a player is in the air.
     private float _airTime;
     //A variable that will be used to declare the starting position.
@@ -43,7 +44,7 @@ public class PlayerScript : MonoBehaviour
             _airTime += Time.deltaTime;
         }
 
-        if (_birdWasLaunched && rigBod.velocity.magnitude <= 0.1)
+        if (_playerWasLaunched && rigBod.velocity.magnitude <= 0.1)
         {
             _airTime += Time.deltaTime;
         }
@@ -112,7 +113,7 @@ public class PlayerScript : MonoBehaviour
         //Cleaner way of writing above code,  but using this method the multiplier will need to be huge (500+) and has to be set here.
         //rigBod.AddForce(directionToInitialPosition * 5);
 
-        //Cleanest way of writing code, the _speedMultiplier variable can be altered at any time in Unity.
+        //Cleaner way of writing code, the _speedMultiplier variable can be altered at any time in Unity.
         rigBod.AddForce(directionToInitialPosition * _speedMultiplier);
 
         //Calls the rigBod variable as opposed to the RigidBody in the editor itself.
@@ -127,7 +128,6 @@ public class PlayerScript : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        //Maybe a velocity option for mobile controls.
         //New Vector to move character to mouse position.
         Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //Ensures that the character doesn't move to the Z position of the camera.
