@@ -64,11 +64,6 @@ public class PlayerScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W))
         {
             rigBod.velocity = transform.up * speed;
-            //Old broken jump script
-            /*if (transform.position.y <= 5.00f)
-            {
-                rigBod.velocity = transform.up * speed;
-            }*/
         }
 
         if (Input.GetKeyDown(KeyCode.A))
