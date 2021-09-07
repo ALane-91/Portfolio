@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    //This script interacts with the EnemyTest script.
     public float speed = 20f;
     public Rigidbody bulletrb;
     public GameObject bulletImpact;
