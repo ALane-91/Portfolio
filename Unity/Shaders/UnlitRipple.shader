@@ -1,3 +1,4 @@
+//A shader that provides an unlit ripple effect. Useful for flags etc.
 Shader "Unlit/UnlitRipple"
 {
     Properties
@@ -38,10 +39,10 @@ Shader "Unlit/UnlitRipple"
             v2f vert (appdata v)
             {
                 v2f o;
-				//Provides a static wave effect when applied to a material.
-				v.vertex.y += sin(v.vertex.x);
-				//Provides a moving wave effect when applied to a material.
-				//v.vertex.y += sin(v.vertex.x+_Time.y)*.3;
+		//Provides a static wave effect when applied to a material.
+		v.vertex.y += sin(v.vertex.x);
+		//Provides a moving wave effect when applied to a material. Comment out previous line if used.
+		//v.vertex.y += sin(v.vertex.x+_Time.y)*.3;
 
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
