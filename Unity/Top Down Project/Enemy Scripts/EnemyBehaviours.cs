@@ -59,16 +59,4 @@ public class EnemyBehaviours : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
     */
-
-    void Flee(bool flee)
-    {
-        if (flee == false)
-        {
-
-        }
-        else if (flee == true)
-        {
-
-        }
-    }
 }
