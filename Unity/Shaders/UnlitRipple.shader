@@ -39,7 +39,7 @@ Shader "Unlit/UnlitRipple"
             v2f vert (appdata v)
             {
                 v2f o;
-		//Provides a static wave effect when applied to a material.
+		//Provides a static wave effect when applied to a material using the values of a sine wave.
 		v.vertex.y += sin(v.vertex.x);
 		//Provides a moving wave effect when applied to a material. Comment out previous line if used.
 		//v.vertex.y += sin(v.vertex.x+_Time.y)*.3;
