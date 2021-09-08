@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyBehaviours : MonoBehaviour
 {
+    //Requires further work, interacts with another script that is not uploaded yet.
     //GameObject enemy;
     public float speed = 8f;
     public float sightRange = 5f;
